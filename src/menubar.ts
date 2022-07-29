@@ -643,7 +643,6 @@ export class Menubar extends Disposable {
     }
 
     private showMenu(menuIndex: number, selectFirst = true): void {
-        console.log('About to show the menu')
         const customMenu = this.menuItems[menuIndex];
         const menuHolder = $('ul.menubar-menu-container');
 
