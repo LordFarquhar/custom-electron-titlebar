@@ -1,5 +1,7 @@
 # Custom Electron Titlebar
 
+Forked from <https://github.com/Treverix/custom-electron-titlebar>
+
 This project is a typescript library for electron that allows you to configure a fully customizable title bar.
 The titlebar is based on the solution from Visual Studio Code and uses
 some of their code.

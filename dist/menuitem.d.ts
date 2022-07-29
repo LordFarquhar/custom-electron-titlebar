@@ -1,0 +1,38 @@
+import { EventLike } from "vs/base/browser/dom";
+import { MenuItem } from "electron";
+import { KeyCode } from "vs/base/common/keyCodes";
+import { Disposable } from "vs/base/common/lifecycle";
+import { IMenuItem, IMenuStyle, IMenuOptions } from './api';
+export declare class CETMenuItem extends Disposable implements IMenuItem {
+    protected options: IMenuOptions;
+    protected menuStyle: IMenuStyle | undefined;
+    protected container: HTMLElement | undefined;
+    protected itemElement: HTMLElement | undefined;
+    private readonly item;
+    private labelElement;
+    private checkElement;
+    private iconElement;
+    private readonly mnemonic;
+    protected readonly closeSubMenu: () => void;
+    private event;
+    private readonly currentWindow;
+    constructor(item: MenuItem, options?: IMenuOptions, closeSubMenu?: () => void);
+    getContainer(): HTMLElement | undefined;
+    isEnabled(): boolean;
+    isSeparator(): boolean;
+    render(container: HTMLElement): void;
+    onClick(event: EventLike): void;
+    focus(): void;
+    blur(): void;
+    setAccelerator(): void;
+    updateLabel(): void;
+    updateIcon(): void;
+    updateTooltip(): void;
+    updateEnabled(): void;
+    updateVisibility(): void;
+    updateChecked(): void;
+    dispose(): void;
+    getMnemonic(): KeyCode | undefined;
+    protected applyStyle(): void;
+    style(style: IMenuStyle): void;
+}
